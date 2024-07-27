@@ -1,0 +1,63 @@
+<div class="stock-list">
+    <div class="header">
+        <h2>{{title}}</h2>
+        <button class="add-button">+</button>
+    </div>
+    <div class="position-relative">
+        <hr>
+        @if (currentStart != 0) {
+            <button class="up button-style" (click)="moveCarousel(-1)"></button>
+            }
+    </div>
+    <div *ngFor="let stock of stocksList" class="stock-item">
+        <div class="stock-logo">
+            <img [src]="stock.logoUrl" [alt]="stock.name">
+        </div>
+        <div class="stock-details">
+            <div class="stock-name">{{ stock.name }}</div>
+            <div class="stock-symbol">{{ stock.symbol }}</div>
+        </div>
+        <div class="stock-price-details">
+            <div class="stock-price">{{ stock.price }}</div>
+            <div class="stock-change"
+                [ngClass]="{'positive': stock.isPositiveChange, 'negative': !stock.isPositiveChange}">
+                {{ stock.changePercentage }}
+                <span *ngIf="stock.isPositiveChange">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" viewBox="0 0 13 12" fill="none">
+                        <g clip-path="url(#clip0_345_1215)">
+                            <path
+                                d="M8.66665 3.9375C8.26717 3.9375 7.94443 3.63027 7.94443 3.25C7.94443 2.86973 8.26717 2.5625 8.66665 2.5625H12.2778C12.6772 2.5625 13 2.86973 13 3.25V6.6875C13 7.06777 12.6772 7.375 12.2778 7.375C11.8783 7.375 11.5555 7.06777 11.5555 6.6875V4.91074L7.73228 8.54805C7.45016 8.8166 6.992 8.8166 6.70988 8.54805L4.33332 6.28574L1.23228 9.23555C0.950157 9.5041 0.491998 9.5041 0.20988 9.23555C-0.0722385 8.96699 -0.0722385 8.53086 0.20988 8.2623L3.82099 4.8248C4.10311 4.55625 4.56127 4.55625 4.84339 4.8248L7.22221 7.08926L10.5331 3.9375H8.66665Z"
+                                fill="#01A04A" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_345_1215">
+                                <rect width="13" height="11" fill="white" transform="translate(0 0.5)" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </span>
+                <span *ngIf="!stock.isPositiveChange">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" viewBox="0 0 13 12" fill="none">
+                        <g clip-path="url(#clip0_345_1239)">
+                            <path
+                                d="M8.66665 8.0625C8.26717 8.0625 7.94443 8.36973 7.94443 8.75C7.94443 9.13027 8.26717 9.4375 8.66665 9.4375H12.2778C12.6772 9.4375 13 9.13027 13 8.75V5.3125C13 4.93223 12.6772 4.625 12.2778 4.625C11.8783 4.625 11.5555 4.93223 11.5555 5.3125V7.08926L7.73228 3.45195C7.45016 3.1834 6.992 3.1834 6.70988 3.45195L4.33332 5.71426L1.23228 2.76445C0.950157 2.4959 0.491998 2.4959 0.20988 2.76445C-0.0722385 3.03301 -0.0722385 3.46914 0.20988 3.7377L3.82099 7.1752C4.10311 7.44375 4.56127 7.44375 4.84339 7.1752L7.22221 4.91074L10.5331 8.0625H8.66665Z"
+                                fill="#A00101" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_345_1239">
+                                <rect width="13" height="11" fill="white" transform="matrix(1 0 0 -1 0 11.5)" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </span>
+            </div>
+        </div>
+
+    </div>
+    <div class="position-relative">
+
+        @if (currentEnd != stocks.length) {
+            <button class="down button-style" (click)="moveCarousel(1)"></button>
+            }
+    </div>
+</div>

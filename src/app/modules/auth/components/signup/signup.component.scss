@@ -1,0 +1,100 @@
+.open-account-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-card {
+    background-color: #F7F8FA;
+    padding: 30px 40px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    color: #2C2C30;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+}
+
+.username-input, .email-input, .password-input {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+
+    input {
+        background-color: #fff;
+        border: none !important;
+        outline: none;
+        flex: 1;
+    }
+}
+
+.username-input .username-icon, .password-input button, .email-input .fa-envelope {
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+}
+
+.username-input .username-icon, .password-input button {
+    margin-left: 10px;
+}
+
+.password-input button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #888;
+}
+
+.error-message {
+    font-size: 12px;
+    color: red;
+    margin-top: 5px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+.sign-in-text {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.sign-in-text a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.sign-in-text a:hover {
+    text-decoration: underline;
+}

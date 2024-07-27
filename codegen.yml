@@ -1,0 +1,6 @@
+schema: "src/app/schema.graphql"
+generates:
+  src/app/graphql/generated-types.ts:
+    plugins:
+      - "typescript"
+      - "typescript-apollo-angular"

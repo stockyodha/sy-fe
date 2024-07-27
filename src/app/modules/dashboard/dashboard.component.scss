@@ -1,0 +1,26 @@
+.dashboard {
+    position: relative;
+    overflow: hidden;
+    background-color: #f8f9fa;
+}
+
+.sidebar {
+    position: fixed;
+    width: 250px;
+    left: 0;
+    top: 0;
+    height: 100%;
+    border-radius: 0px 50px 50px 0px;
+    background: #FFF;
+
+}
+
+.pages {
+    margin-left: 250px;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.content {
+    margin-top: 75px;
+}

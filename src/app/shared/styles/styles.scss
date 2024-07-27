@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'variables.scss';
+@import 'dark.scss';
+@import 'light.scss';
+@import 'typography.scss';
+
+
+
+.body {
+    height: 100%;
+    background-color: red;
+}
+
+.btn {
+    padding: 0.25em 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    font-size: $sm-font-size;
+    font-weight: $sm-font-weight;
+    transition: background-color 0.3s ease;
+}
+
+
+.card {
+    width: 150px;
+    height: 120px;
+    border-radius: 8px;
+    background: #FFF;
+}
+
+
+.sidebar {
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    li {
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+}
+
+

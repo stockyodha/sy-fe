@@ -1,0 +1,26 @@
+<div class="stock-list">
+    <div class="header">
+      <h2>{{title}}</h2>
+      <div class="tab-buttons">
+        <button [class.active]="activeTab === 'gainer'" (click)="setActiveTab('gainer')">GAINER</button>
+        <button [class.active]="activeTab === 'loser'" (click)="setActiveTab('loser')">LOSER</button>
+      </div>
+    </div>
+    <div class="market-tabs">
+      <button [class.active]="activeMarket === 'NSE'" (click)="setActiveMarket('NSE')">NSE</button>
+      <button [class.active]="activeMarket === 'BSE'" (click)="setActiveMarket('BSE')">BSE</button>
+    </div>
+    <div class="stock-items">
+      <div *ngFor="let stock of stocks" class="stock-item">
+        <div class="stock-symbol">{{ stock.Symbol }}</div>
+        <div class="stock-name">{{ stock.CompanyName }}</div>
+        <div class="stock-price">{{ stock.Close }}</div>
+        <div class="stock-change" [ngClass]="{'positive': stock.Change >= 0 , 'negative': stock.Change < 0}">
+          {{ stock.PercentChange }}%
+          <span *ngIf="stock.Change >= 0">&#8593;</span>
+          <span *ngIf="stock.Change < 0">&#8595;</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  

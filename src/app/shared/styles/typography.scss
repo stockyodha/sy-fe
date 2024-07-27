@@ -1,0 +1,21 @@
+@import "./variables.scss";
+@import "./dark.scss";
+@import "./light.scss";
+
+
+h1 {
+    text-align: center;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 40px;
+}
+
+
+p {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    /* 200% */
+}
+

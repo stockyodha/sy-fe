@@ -1,0 +1,73 @@
+<div class="row">
+  <div class="col-8">
+    <section class="d-flex">
+
+      <div class="carousel-container position-relative">
+        @if (currentStart != 0) {
+        <button class="prev button-style" (click)="moveCarousel(-1)"></button>
+        }
+        <div class="carousel">
+          @for (portfolio of portfolios; track portfolio.portfolio.id) {
+          <div class="card" [ngClass]="{green: portfolio.return >= 0,red: portfolio.return < 0}">
+            <div class="d-flex justify-content-between">
+              <div>
+                <div class="title">{{portfolio.portfolio.name}}</div>
+                <div class="price">{{portfolio.investment}}</div>
+              </div>
+              <div class="percentage" [ngClass]="{positive:  portfolio.return >= 0 ,negative: portfolio.return<0}">
+                {{portfolio.returnPercentage}}%
+                @if (portfolio.return >= 0 ) {<span>&#8593;</span>}
+                @else if (portfolio.return<0) {<span>&#8595;</span>}
+              </div>
+            </div>
+            <div class="chart"></div>
+          </div>
+          }
+        </div>
+        @if (portfoliosMain.length != currentEnd) {
+        <button class="next button-style" (click)="moveCarousel(1)"></button>
+        }
+      </div>
+    </section>
+
+    <section class="d-flex mt-5">
+      <app-trend-list style="margin-right: 20px;" title="YODHA TRENDS"></app-trend-list>
+      <app-trend-list title="MARKET TRENDS" [marketData]="gainerLoser" ></app-trend-list>
+    </section>
+    <section class="mt-5">
+      <p>recent news</p>
+      <div class="news-container">
+        <div class="left-panel">
+          <img
+            src="https://bsmedia.business-standard.com/_media/bs/img/article/2021-02/25/full/1614196468-1344.jpg?im=FeatureCrop,size=(803,452)"
+            alt="News Image" class="news-image">
+          <div class="overlay-content">
+            <div class="news-title">Day 5 Highlights</div>
+            <div class="news-headline">
+              Closing Bell: Sensex gains 65 pts, Nifty ends near 22,400.
+            </div>
+          </div>
+        </div>
+        <div class="right-panel">
+          <div *ngFor="let news of newsList; let i = index" class="news-item"
+            [ngClass]="{'fade-out': i === newsList.length - 1}">
+            <img [src]="news.image" alt="News Image" class="news-item-image">
+            <div class="news-text">
+              <div class="news-category">#{{news.category}} – {{news.date}}</div>
+              <div class="news-headline-small">{{news.headline}}</div>
+            </div>
+          </div>
+          <button mat-button class="show-all-button">Show All</button>
+        </div>
+      </div>
+
+    </section>
+  </div>
+
+  <div class="col-4 d-flex flex-column align-items-end">
+    <app-stock-list title="watchlist" [stocks]="stocks"></app-stock-list>
+    <div class="mt-5">
+      <app-stock-list title="transactions" [stocks]="stocks"></app-stock-list>
+    </div>
+  </div>
+</div>

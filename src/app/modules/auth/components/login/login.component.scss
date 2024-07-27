@@ -1,0 +1,97 @@
+.open-account-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .form-card {
+    background-color: #f7f8fa;
+    padding: 30px 40px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  label {
+    display: block;
+    color: #2c2c30;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+  }
+  
+  .username-input,
+  .password-input {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+  
+    input {
+      background-color: #fff;
+      border: none !important;
+      outline: none;
+      flex: 1;
+    }
+  }
+  
+  .username-input,
+  .password-input span {
+    margin-right: 10px;
+  }
+  
+  .username-input .username-icon,
+  .password-input .password-icon {
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+  }
+  
+  small {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #888;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .submit-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .sign-in-text {
+    margin-top: 15px;
+    font-size: 14px;
+  }
+  
+  .sign-in-text a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .sign-in-text a:hover {
+    text-decoration: underline;
+  }  

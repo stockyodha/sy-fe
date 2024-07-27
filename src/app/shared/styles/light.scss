@@ -1,0 +1,23 @@
+@import 'variables';
+
+body.light {
+    background-color: $background-color;
+    height: 100%;
+}
+
+.light {
+    .icon {
+        filter: invert(10%) sepia(2%) saturate(2704%) hue-rotate(202deg) brightness(97%) contrast(82%);
+    }
+    .btn {
+        background-color: $btn-primary-color;
+        color: $btn-text-color;
+    }
+
+    h1 {
+        color: $h1-font-color;
+    }
+ 
+}
+
+

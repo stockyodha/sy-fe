@@ -1,0 +1,44 @@
+<section>
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-item" *ngFor="let slide of slides; let i = index" [class.active]="i === currentSlide">
+                <div class="stock-news-container">
+                    <div class="stock-category-badge">{{ slide.category }}</div>
+                    <div class="stock-news-content">
+                        <div class="stock-news-meta">{{ slide.meta }}</div>
+                        <div class="stock-news-title">{{ slide.title }}</div>
+                        <div class="stock-news-description">{{ slide.description }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-dots">
+            <span *ngFor="let slide of slides; let i = index" (click)="selectSlide(i)"
+                [class.active]="i === currentSlide"></span>
+        </div>
+    </div>
+
+</section>
+
+<section>
+        <!-- trending-news.component.html -->
+        <div class="trending-news-container">
+            <div class="news-list">
+                <div class="news-item" *ngFor="let news of newsList">
+                    <img [src]="news.image" alt="News Image" class="news-image">
+                    <div class="news-content">
+                        <h3 class="news-title">{{ news.title }}</h3>
+                        <p class="news-subtitle">{{ news.subtitle }}</p>
+                        <p class="news-description">{{ news.description }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="highlighted-news">
+                <span class="category">{{ highlightedNews.category }}</span>
+                <div class="highlighted-news-item">
+                    <p>{{ highlightedNews.subtitle }}</p>
+                    <h3>{{ highlightedNews.title }}</h3>
+                </div>
+            </div>
+    </div>
+</section>

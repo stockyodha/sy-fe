@@ -1,0 +1,19 @@
+@import 'variables';
+
+body.dark {
+    background-color: $background-color-dark;
+}
+
+.dark {
+    .btn {
+        background-color: $btn-primary-color-dark;
+        color: $btn-text-color-dark;
+    }
+
+    h1 {
+        color: $h1-font-color-dark;
+    }
+
+}
+
+
