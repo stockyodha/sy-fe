@@ -147,7 +147,8 @@ export class HomeComponent {
 
     userObs: Subscription = new Subscription();
     user: User | null = null;
-    gainerLoser: TopLosersGainers | null = null;
+    markteTrends: TopLosersGainers | null = null;
+    youdhaTrends: TopLosersGainers | null = null;
 
     constructor(private portfolioService: PortfolioService, private userService: UserService, private mrktService: MarketService) {
         this.onRefresh();
@@ -160,7 +161,8 @@ export class HomeComponent {
                 return;
             }
             this.getPortfolio();
-            this.getGainersLosers();
+            this.getMarketTrends();
+            this.getYodhaTrends();
         });;
     }
 
@@ -179,11 +181,22 @@ export class HomeComponent {
         });
     }
 
-    getGainersLosers(): void {
-        this.mrktService.onTopGainersLosers().then(result => {
+    getMarketTrends(): void {
+        this.mrktService.onMarketTrends().then(result => {
             const data = result.data as any
-            this.gainerLoser = data.topLosersGainers as TopLosersGainers;
-            console.log(this.gainerLoser);
+            this.markteTrends = data.topLosersGainers as TopLosersGainers;
+            console.log(this.markteTrends);
+        }).catch((error: ApolloError) => {
+            console.log("Gql error", error.graphQLErrors);
+            console.log("Network error", error.networkError);
+        });
+    }
+
+    getYodhaTrends(): void {
+        this.mrktService.onYodhaTrends().then(result => {
+            console.log(result);
+            const data = result.data as any
+            this.youdhaTrends = data.yodhaTrends as TopLosersGainers;
         }).catch((error: ApolloError) => {
             console.log("Gql error", error.graphQLErrors);
             console.log("Network error", error.networkError);

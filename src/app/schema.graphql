@@ -1846,6 +1846,7 @@ type PortfolioResponse {
 }
 
 type StockMarketData {
+  StockId : String!
   Symbol: String!
   CompanyName: String!
   Change: Float!
@@ -1875,5 +1876,6 @@ extend type Query {
     @auth
   newsById(id: String!): News! @auth
   portfoliosByUser(userId: String!): [PortfolioResponse!]! @auth
-  topLosersGainers(limit: Int): TopLosersGainers! @auth
+  marketTrends(limit: Int): TopLosersGainers! @auth
+  yodhaTrends(limit: Int): TopLosersGainers! @auth
 }

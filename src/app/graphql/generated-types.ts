@@ -804,6 +804,7 @@ export type PortfolioWhereInput = {
 export type Query = {
   __typename?: 'Query';
   login: LoginPayload;
+  marketTrends: TopLosersGainers;
   me: User;
   news: Array<News>;
   newsById: News;
@@ -820,15 +821,20 @@ export type Query = {
   stock: Array<Maybe<Stock>>;
   stocks: Array<Stock>;
   stocksBySentiment: Array<Stock>;
-  topLosersGainers: TopLosersGainers;
   transactions: Array<Transaction>;
   users: Array<User>;
+  yodhaTrends: TopLosersGainers;
 };
 
 
 export type QueryLoginArgs = {
   password: Scalars['String']['input'];
   username: Scalars['String']['input'];
+};
+
+
+export type QueryMarketTrendsArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
 };
 
 
@@ -877,7 +883,7 @@ export type QueryStocksBySentimentArgs = {
 };
 
 
-export type QueryTopLosersGainersArgs = {
+export type QueryYodhaTrendsArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
 };
 
@@ -1191,6 +1197,7 @@ export type StockMarketData = {
   Close: Scalars['Float']['output'];
   CompanyName: Scalars['String']['output'];
   PercentChange: Scalars['Float']['output'];
+  StockId: Scalars['String']['output'];
   Symbol: Scalars['String']['output'];
 };
 
