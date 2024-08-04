@@ -79,7 +79,7 @@ query YodhaTrends($limit: Int!) {
 })
 export class MarketService {
     constructor(private apollo: Apollo) { }
-    onMarketTrends(limit = 10) {
+    onMarketTrends(limit = 5) {
         return firstValueFrom(this.apollo.query({
             query: MARKET_TRENDS,
             variables: {
@@ -92,7 +92,7 @@ export class MarketService {
         ))
     }
 
-    onYodhaTrends(limit = 10) {
+    onYodhaTrends(limit = 5) {
         return firstValueFrom(this.apollo.query({
             query: YODHA_TRENDS,
             variables: {

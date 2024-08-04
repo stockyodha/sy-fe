@@ -184,8 +184,8 @@ export class HomeComponent {
     getMarketTrends(): void {
         this.mrktService.onMarketTrends().then(result => {
             const data = result.data as any
-            this.markteTrends = data.topLosersGainers as TopLosersGainers;
-            console.log(this.markteTrends);
+            this.markteTrends = data.marketTrends as TopLosersGainers;
+            console.log("marketTrends", this.markteTrends);
         }).catch((error: ApolloError) => {
             console.log("Gql error", error.graphQLErrors);
             console.log("Network error", error.networkError);

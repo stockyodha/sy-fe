@@ -4,8 +4,9 @@ import { ApplicationConfig, inject } from '@angular/core';
 import { ApolloClientOptions, InMemoryCache } from '@apollo/client/core';
 import { setContext } from '@apollo/client/link/context';
 import { TokenService } from './shared/services/token.service';
+import { environment } from '../environments/environment';
 
-const uri = 'http://localhost:8080/query'; // <-- add the URL of the GraphQL server here
+const uri = environment.apiUrl + '/query'; // <-- add the URL of the GraphQL server here
 
 export function apolloOptionsFactory(tokenService: TokenService): ApolloClientOptions<any> {
   const httpLink = inject(HttpLink);
