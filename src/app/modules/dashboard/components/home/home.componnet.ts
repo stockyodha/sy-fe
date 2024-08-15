@@ -6,10 +6,12 @@ import { StockListComponent } from "../../../../shared/component/stock-list/stoc
 import { TrendListComponent } from "../../../../shared/component/trend-list/trend-list.component";
 import { PortfolioService } from "../../../../shared/services/portfolio.service";
 import { UserService } from "../../../../shared/services/user.service";
-import { Portfolio, PortfolioResponse, TopLosersGainers, User } from "../../../../graphql/generated-types";
+import { News, Portfolio, PortfolioResponse, TopLosersGainers, User } from "../../../../graphql/generated-types";
 import { Observable, Subscription } from "rxjs";
 import { ApolloError } from "@apollo/client/errors";
 import { MarketService } from "../../../../shared/services/market.service";
+import { NewsService } from "../../../../shared/services/news.service";
+import { WatchlistService } from "../../../../shared/services/watchlist.service";
 
 
 
@@ -138,11 +140,8 @@ export class HomeComponent {
 
     trends = this.stocks.slice(0, 5);
 
-    newsList = [
-        { image: 'https://placehold.jp/150x150.png', category: 'skyrocket NIFTY', date: '12 July 2023', headline: 'Closing Bell: Sensex gains 65 pts, Nifty ends near 22,400...' },
-        { image: 'https://placehold.jp/150x150.png', category: 'trendy', date: '20 July 2023', headline: 'Closing Bell: Sensex gains 65 pts, Nifty ends near 22,400...' },
-        { image: 'https://placehold.jp/150x150.png', category: 'stock loss', date: '27 July 2023', headline: 'Closing Bell: Sensex gains 65 pts, Nifty ends near 22,400...' },
-    ];
+    newsList: News[] = [];
+    newsHighlight: News = {} as News;
 
 
     userObs: Subscription = new Subscription();
@@ -150,9 +149,12 @@ export class HomeComponent {
     markteTrends: TopLosersGainers | null = null;
     youdhaTrends: TopLosersGainers | null = null;
 
-    constructor(private portfolioService: PortfolioService, private userService: UserService, private mrktService: MarketService) {
-        this.onRefresh();
-    }
+    constructor(
+        private portfolioService: PortfolioService, private userService: UserService, private mrktService: MarketService, 
+        private newsService: NewsService, private watchlistService: WatchlistService
+        ) {
+            this.onRefresh();
+        }
 
     onRefresh(): void {
         this.userObs = this.userService.onGetCurrentUser().subscribe(user => {
@@ -163,6 +165,8 @@ export class HomeComponent {
             this.getPortfolio();
             this.getMarketTrends();
             this.getYodhaTrends();
+            this.getNews();
+            this.getWatchlist();
         });;
     }
 
@@ -197,6 +201,31 @@ export class HomeComponent {
             console.log(result);
             const data = result.data as any
             this.youdhaTrends = data.yodhaTrends as TopLosersGainers;
+        }).catch((error: ApolloError) => {
+            console.log("Gql error", error.graphQLErrors);
+            console.log("Network error", error.networkError);
+        });
+    }
+
+    getNews(): void {
+        this.newsService.onPaginatedNews(6, 0, 'DESC', 'published_at').then(result => {
+            console.log('news', result);
+            const data = result.data as any
+            const news = data.news as News[];
+            if (news.length == 0) {
+                return;
+            }
+            this.newsHighlight = news[0];
+            this.newsList = news.slice(1);
+        }).catch((error: ApolloError) => {
+            console.log("Gql error", error.graphQLErrors);
+            console.log("Network error", error.networkError);
+        });
+    }
+
+    getWatchlist(): void {
+        this.watchlistService.getWatchlist().then(result => {
+            console.log('watchlist', result);
         }).catch((error: ApolloError) => {
             console.log("Gql error", error.graphQLErrors);
             console.log("Network error", error.networkError);

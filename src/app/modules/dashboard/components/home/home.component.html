@@ -39,22 +39,24 @@
       <div class="news-container">
         <div class="left-panel">
           <img
-            src="https://bsmedia.business-standard.com/_media/bs/img/article/2021-02/25/full/1614196468-1344.jpg?im=FeatureCrop,size=(803,452)"
+            [src]="newsHighlight.imageURL"
             alt="News Image" class="news-image">
           <div class="overlay-content">
-            <div class="news-title">Day 5 Highlights</div>
+            <div class="news-title">
+              {{newsHighlight.title}}
+            </div>
             <div class="news-headline">
-              Closing Bell: Sensex gains 65 pts, Nifty ends near 22,400.
+              {{newsHighlight.description}}
             </div>
           </div>
         </div>
         <div class="right-panel">
           <div *ngFor="let news of newsList; let i = index" class="news-item"
             [ngClass]="{'fade-out': i === newsList.length - 1}">
-            <img [src]="news.image" alt="News Image" class="news-item-image">
+            <img [src]="news.imageURL" alt="News Image" class="news-item-image">
             <div class="news-text">
-              <div class="news-category">#{{news.category}} – {{news.date}}</div>
-              <div class="news-headline-small">{{news.headline}}</div>
+              <div class="news-category">#{{news.source}} – {{news.publishedAt}}</div>
+              <div class="news-headline-small">{{news.title}}</div>
             </div>
           </div>
           <button mat-button class="show-all-button">Show All</button>
