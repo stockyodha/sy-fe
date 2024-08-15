@@ -17,6 +17,7 @@ export class TrendListComponent {
   activeMarket = 'NSE';
   stocks: StockMarketData[] = [];
 
+
   setActiveTab(tab: string) {
     this.activeTab = tab;
     this.setActiveMarket(this.activeMarket);
@@ -44,10 +45,7 @@ export class TrendListComponent {
   ngOnChanges(changes: SimpleChanges): void {
     //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
     //Add '${implements OnChanges}' to the class.
-    console.log('Changes', changes);
-    if (changes["stocksNse"]) {
-      console.log('Stocks NSE', changes);
-      this.stocks = this.stocks
-    }
+    this.setActiveTab(this.activeTab);
   }
+  
 }
