@@ -1,273 +1,283 @@
-.carousel-container {
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    box-sizing: border-box;
-}
-
-.carousel {
-    display: flex;
-    transition: transform 0.3s ease-in-out;
-}
 
 .card {
-    background: #FFF;
-    border-radius: 8px;
-    width: 200px;
-    margin-right: 20px;
-    padding: 20px;
-    box-sizing: border-box;
-    text-align: left;
-    position: relative;
-    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.10);
-}
-
-.card .title {
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    color: #676767;
-}
-
-.card .price {
-    color: #676767;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    margin-bottom: 10px;
-}
-
-.card .percentage {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.card .percentage span {
-    margin-left: 5px;
-}
-
-.card .positive {
-    color: #16A34A;
-}
-
-.card.green .chart {
-    background-image: url('../../../../../assets/images/line_green.svg');
-    background-position: center;
-    background-repeat: repeat-x;
-}
-
-.card .negative {
-    color: #D74A4A;
-}
-
-.card.red .chart {
-    background-image: url('../../../../../assets/images/line_red.svg');
-    background-position: center;
-    background-repeat: repeat-x;
-}
-
-.card .neutral {
-    color: #676767;
-}
-
-.card .chart {
-    height: 50px;
-    margin-bottom: 10px;
-    /* Placeholder for the chart */
-    /* Example for green chart line */
-    position: relative;
+    height: 150px;
 }
 
 
-.card .icon {
-    background-color: white;
-    border-radius: 50%;
-    padding: 10px;
-    display: inline-block;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-}
-
-.controls {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 800px;
-    margin: 20px 0;
-}
-
-.controls button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.controls button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-}
 
 
-.button-style {
-    background-color: #ffffff;
-    /* White background */
-    border: 0px solid #d1d1d1;
-    /* Light gray border */
-    border-radius: 50%;
-    /* Make the button round */
-    color: #000000;
-    /* Black text color */
-    width: 40px;
-    /* Width of the button */
-    height: 40px;
-    /* Height of the button */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    /* Smooth transition for hover effects */
-}
 
-.button-style:hover {
-    background-color: #f0f0f0;
-    /* Slightly darker background on hover */
-}
 
-.prev {
-    position: absolute;
-    left: 0;
-    background-image: url('../../../../../assets/images/prev_button.svg');
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 1;
-}
+// .carousel-container {
+//     width: 100%;
+//     overflow: hidden;
+//     display: flex;
+//     align-items: center;
+//     box-sizing: border-box;
+// }
 
-.next {
-    position: absolute;
-    right: 0;
-    background-image: url('../../../../../assets/images/next_button.svg');
-    background-position: center;
-    background-repeat: no-repeat;
-}
+// .carousel {
+//     display: flex;
+//     transition: transform 0.3s ease-in-out;
+// }
 
-.news-container {
-    display: flex;
-    justify-content: space-between;
-    padding-right: 40px;
-}
+// .card {
+//     background: #FFF;
+//     border-radius: 8px;
+//     width: 200px;
+//     margin-right: 20px;
+//     padding: 20px;
+//     box-sizing: border-box;
+//     text-align: left;
+//     position: relative;
+//     box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.10);
+// }
 
-.left-panel {
-    flex: 2;
-    position: relative;
-}
+// .card .title {
+//     font-size: 18px;
+//     font-style: normal;
+//     font-weight: 600;
+//     line-height: normal;
+//     color: #676767;
+// }
 
-.news-image {
-    width: 100%;
-    height: 450px;
-    border-radius: 10px;
-}
+// .card .price {
+//     color: #676767;
+//     font-style: normal;
+//     font-weight: 500;
+//     line-height: normal;
+//     margin-bottom: 10px;
+// }
 
-.overlay-content {
-    position: absolute;
-    bottom: 0px;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 10px;
-    border-radius: 5px;
-}
+// .card .percentage {
+//     margin-bottom: 10px;
+//     display: flex;
+//     align-items: center;
+// }
 
-.news-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
+// .card .percentage span {
+//     margin-left: 5px;
+// }
 
-.news-headline {
-    font-size: 22px;
-    font-weight: bold;
-}
+// .card .positive {
+//     color: #16A34A;
+// }
 
-.right-panel {
-    flex: 1;
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-left: 20px;
-    padding: 10px 20px;
-    background: #f9f9f9;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
+// .card.green .chart {
+//     background-image: url('../../../../../assets/images/line_green.svg');
+//     background-position: center;
+//     background-repeat: repeat-x;
+// }
 
-.news-item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 20px;
-}
+// .card .negative {
+//     color: #D74A4A;
+// }
 
-.news-item-image {
-    width: 50px;
-    height: 50px;
-    border-radius: 5px;
-    margin-right: 10px;
-}
+// .card.red .chart {
+//     background-image: url('../../../../../assets/images/line_red.svg');
+//     background-position: center;
+//     background-repeat: repeat-x;
+// }
 
-.news-text {
-    display: flex;
-    flex-direction: column;
-}
+// .card .neutral {
+//     color: #676767;
+// }
 
-.news-category {
-    font-size: 14px;
-    color: #aaa;
-}
+// .card .chart {
+//     height: 50px;
+//     margin-bottom: 10px;
+//     /* Placeholder for the chart */
+//     /* Example for green chart line */
+//     position: relative;
+// }
 
-.news-headline-small {
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-}
 
-.show-all-button {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    align-self: flex-start;
-    margin-top: 20px;
-    border-radius: 3px;
-    background-color: #0169CD;
-    color: #fff;
-    display: inline-flex;
-    height: 29.424px;
-    padding: 6px 12px 6px 7px;
-    justify-content: center;
-    align-items: center;
-    gap: 4px;
-    flex-shrink: 0;
-}
+// .card .icon {
+//     background-color: white;
+//     border-radius: 50%;
+//     padding: 10px;
+//     display: inline-block;
+//     cursor: pointer;
+//     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+//     position: absolute;
+//     bottom: 10px;
+//     right: 10px;
+// }
 
-.fade-out {
-    position: relative;
-}
+// .controls {
+//     display: flex;
+//     justify-content: space-between;
+//     width: 100%;
+//     max-width: 800px;
+//     margin: 20px 0;
+// }
 
-.fade-out::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
-}
+// .controls button {
+//     background-color: #007bff;
+//     color: white;
+//     border: none;
+//     padding: 10px 20px;
+//     cursor: pointer;
+//     border-radius: 5px;
+// }
+
+// .controls button:disabled {
+//     background-color: #ccc;
+//     cursor: not-allowed;
+// }
+
+
+// .button-style {
+//     background-color: #ffffff;
+//     /* White background */
+//     border: 0px solid #d1d1d1;
+//     /* Light gray border */
+//     border-radius: 50%;
+//     /* Make the button round */
+//     color: #000000;
+//     /* Black text color */
+//     width: 40px;
+//     /* Width of the button */
+//     height: 40px;
+//     /* Height of the button */
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     cursor: pointer;
+//     transition: background-color 0.3s ease, color 0.3s ease;
+//     /* Smooth transition for hover effects */
+// }
+
+// .button-style:hover {
+//     background-color: #f0f0f0;
+//     /* Slightly darker background on hover */
+// }
+
+// .prev {
+//     position: absolute;
+//     left: 0;
+//     background-image: url('../../../../../assets/images/prev_button.svg');
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     z-index: 1;
+// }
+
+// .next {
+//     position: absolute;
+//     right: 0;
+//     background-image: url('../../../../../assets/images/next_button.svg');
+//     background-position: center;
+//     background-repeat: no-repeat;
+// }
+
+// .news-container {
+//     display: flex;
+//     justify-content: space-between;
+//     padding-right: 40px;
+// }
+
+// .left-panel {
+//     flex: 2;
+//     position: relative;
+// }
+
+// .news-image {
+//     width: 100%;
+//     height: 450px;
+//     border-radius: 10px;
+// }
+
+// .overlay-content {
+//     position: absolute;
+//     bottom: 0px;
+//     color: #fff;
+//     background: rgba(0, 0, 0, 0.5);
+//     padding: 10px;
+//     border-radius: 5px;
+// }
+
+// .news-title {
+//     font-size: 18px;
+//     font-weight: bold;
+//     margin-bottom: 5px;
+// }
+
+// .news-headline {
+//     font-size: 22px;
+//     font-weight: bold;
+// }
+
+// .right-panel {
+//     flex: 1;
+//     display: flex;
+//     position: relative;
+//     flex-direction: column;
+//     justify-content: flex-start;
+//     margin-left: 20px;
+//     padding: 10px 20px;
+//     background: #f9f9f9;
+//     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+//     border-radius: 10px;
+// }
+
+// .news-item {
+//     display: flex;
+//     flex-direction: row;
+//     align-items: center;
+//     margin-bottom: 20px;
+// }
+
+// .news-item-image {
+//     width: 50px;
+//     height: 50px;
+//     border-radius: 5px;
+//     margin-right: 10px;
+// }
+
+// .news-text {
+//     display: flex;
+//     flex-direction: column;
+// }
+
+// .news-category {
+//     font-size: 14px;
+//     color: #aaa;
+// }
+
+// .news-headline-small {
+//     font-size: 16px;
+//     font-weight: bold;
+//     color: #333;
+// }
+
+// .show-all-button {
+//     position: absolute;
+//     bottom: 0;
+//     right: 0;
+//     align-self: flex-start;
+//     margin-top: 20px;
+//     border-radius: 3px;
+//     background-color: #0169CD;
+//     color: #fff;
+//     display: inline-flex;
+//     height: 29.424px;
+//     padding: 6px 12px 6px 7px;
+//     justify-content: center;
+//     align-items: center;
+//     gap: 4px;
+//     flex-shrink: 0;
+// }
+
+// .fade-out {
+//     position: relative;
+// }
+
+// .fade-out::after {
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+// }

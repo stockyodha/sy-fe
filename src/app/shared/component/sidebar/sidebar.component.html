@@ -1,43 +1,74 @@
-<div class="sidebar">
+<div class="sidebar" [ngClass]="{'open': isOpen()}">
     <div class="logo">
-        <img src="https://placehold.co/100" alt="Stockyodha Logo">
-        <span>stockyodha</span>
+        <img class="icon-bg" src="https://placehold.co/100" alt="Stockyodha Logo">
+        <span *ngIf="isOpen()" class="title">stockyodha</span>
     </div>
-    <nav class="navigation">
-        <span>USER PANEL</span>
+    <nav class="group navigation">
         <ul>
-            <li routerLinkActive="active" routerLink="/dashboard/home"><a><img src="assets/images/dashboard.svg" alt="Dashboard Icon"> dashboard</a></li>
-            <li routerLinkActive="active" routerLink="/dashboard/portfolio"><a><img src="assets/images/portfolio.svg" alt="Portfolio Icon"> portfolio</a></li>
-            <li routerLinkActive="active" routerLink="/dashboard/news"><a><img src="assets/images/news.svg" alt="News Icon"> news</a></li>
-            <li routerLinkActive="active" routerLink="/dashboard/transactions"><a><img src="assets/images/transaction.svg" alt="Transaction Icon"> transactions</a></li>
+            <li routerLinkActive="active" routerLink="/dashboard/home">
+                <div class="icon-md">
+                    <i class="fa-regular fa-desktop"></i>
+                </div>
+                <a class="body-text" *ngIf="isOpen()"> dashboard</a>
+            </li>
+            <li routerLinkActive="active" routerLink="/dashboard/portfolio">
+                <div class="icon-md">
+                    <i class="fa-regular fa-briefcase"></i>
+                </div>
+                <a class="body-text" *ngIf="isOpen()"> portfolio</a>
+            <li routerLinkActive="active" routerLink="/dashboard/news">
+                <div class="icon-md">
+                    <i class="fa-regular fa-newspaper"></i>
+                </div>
+                <a class="body-text" *ngIf="isOpen()"> news</a>
+            </li>
+            <li routerLinkActive="active" routerLink="/dashboard/transactions">
+                <div class="icon-md">
+                    <i class="fa-regular fa-money-bill"></i>
+                </div>
+                <a class="body-text" *ngIf="isOpen()"> transactions</a>
+            </li>
         </ul>
     </nav>
-    <div class="other">
-        <span>OTHER</span>
+    <hr>
+    <div class="group other">
         <ul>
-            <li><a><img src="assets/images/settings.svg" alt="Settings Icon"> settings</a></li>
             <li>
-                <a>
-                    <img src="assets/images/dark-mode.svg" alt="Dark Mode Icon"> dark mode
-                    <label class="switch">
-                        <input type="checkbox">
-                        <span class="slider round"></span>
-                    </label>
-                </a>
+                <div class="icon-md">
+                    <i class="fa-regular fa-gear"></i>
+                </div>
+                <a class="body-text" *ngIf="isOpen()">settings</a>
+            </li>
+            <li *ngIf="isOpen()">
+
+                <div class="icon-md">
+                    <i class="fa-regular fa-moon"></i>
+                </div>
+                <a class="body-text">dark mode</a>
+                <label class="switch" (click)="toggleUIMode()">
+                    <input type="checkbox" [checked]="isDarkMode()">
+                    <span class="slider round"></span>
+                </label>
+
             </li>
         </ul>
     </div>
-    <div class="support">
+    <div class="group support" *ngIf="isOpen()">
         <div class="support-content">
-            <div class="d-flex align-items-center">
-                <img src="assets/images/support.svg" alt="Support Icon">
-                <span>Need Support ?</span>
-                <button class="close-btn">&times;</button>
+            <div class="d-flex justify-content-between align-items-center">
+                <i class="icon-sm fa-regular fa-headset"></i>
+                <span class="section-title">Need Support ?</span>
+                <i class="icon-sm fa-regular fa-xmark"></i>
             </div>
-            <p>Contact with one of our expert to get support.</p>
+            <p class="body-text mt-2">Contact with one of our expert to get support.</p>
         </div>
     </div>
-    <div class="logout">
-        <a><img src="assets/images/logout.svg" alt="Logout Icon"> logout</a>
+    <div class="group logout">
+        <div class="icon-md">
+            <i class="fa-regular fa-sign-out"></i>
+        </div>
+        <a class="body-text" *ngIf="isOpen()">logout</a>
     </div>
+    <div *ngIf="isOpen()" class="btn-prev" (click)="toggleSidebar()"></div>
+    <div *ngIf="!isOpen()" class="btn-next" (click)="toggleSidebar()"></div>
 </div>

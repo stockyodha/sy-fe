@@ -1,8 +1,6 @@
 <div class="dashboard">
-  <div class="sidebar">
-    <app-sidebar></app-sidebar>
-  </div>
-  <div class="pages">
+  <app-sidebar></app-sidebar>
+  <div class="pages" [ngClass]="{'open': isOpen()}">
     <app-header></app-header>
     <div class="content">
       <router-outlet></router-outlet>

@@ -1,6 +1,7 @@
 // Onboarding component
 
 import { Component } from "@angular/core";
+import { SidebarService } from "../../services/sidebar.service";
 
 
 
@@ -10,5 +11,9 @@ import { Component } from "@angular/core";
     styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-    constructor() { }
+    constructor(private sidebarService: SidebarService) { }
+    title = 'overview';
+    isOpen() {
+        return this.sidebarService.getSidebarState();
+    }
 }

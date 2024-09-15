@@ -1,46 +1,94 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'variables.scss';
-@import 'dark.scss';
-@import 'light.scss';
-@import 'typography.scss';
-
-
+@import "dark.scss";
+@import "light.scss";
+@import "typography.scss";
 
 .body {
-    height: 100%;
-    background-color: red;
+  height: 100%;
 }
-
-.btn {
-    padding: 0.25em 1rem;
-    border-radius: 0.5rem;
-    border: none;
-    cursor: pointer;
-    font-size: $sm-font-size;
-    font-weight: $sm-font-weight;
-    transition: background-color 0.3s ease;
-}
-
-
-.card {
-    width: 150px;
-    height: 120px;
-    border-radius: 8px;
-    background: #FFF;
-}
-
 
 .sidebar {
-    ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
+  ul {
+    list-style-type: none;
+    padding: 0;
+
+    a {
+      text-decoration: none;
+      color: inherit;
     }
-    li {
-        padding: 0.5rem 1rem;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
+  }
 }
 
+.btn-prev {
+  width: 50px;
+  height: 50px;
+  background-image: url("../../../assets/images/prev_button.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
 
+.btn-next {
+  width: 50px;
+  height: 50px;
+  background-image: url("../../../assets/images/next_button.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.card {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none !important;
+}
+
+.icon-sm {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: bottom;
+  i {
+    vertical-align: middle;
+  }
+}
+
+.icon-md {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: bottom;
+  i {
+    vertical-align: middle;
+  }
+}
+
+.icon-bg {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: bottom;
+  i {
+    vertical-align: middle;
+  }
+}
+
+.btn-round {
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+td {
+  text-align: center;
+}
+
+.dotted-border {
+  border-width: 5px;
+  border-radius: 10px;
+  border-style: dashed;
+  border-image-slice: 33% 33%;
+  border-image-repeat: round;
+}

@@ -1,0 +1,23 @@
+<div class="carousel-wrapper" *ngIf="watchlist.length > 0">
+  <div class="btn-prev" (click)="scrollCarousel('prev')"></div> <!-- Left Arrow -->
+  <div class="carousel">
+    <div class="carousel-item" *ngFor="let watchliststock of watchlist">
+      <!-- Remove from watchlist button -->
+      <div class="remove-button icon-md" (click)="removeFromWatchlist(watchliststock.stock.symbol)">
+        <i class="fa fa-times"></i>
+      </div>
+      <div class="stock-card">
+        <h3 class="stock-symbol">{{ watchliststock.stock.symbol }}</h3>
+        <p class="stock-price">{{ watchliststock.price | currency:'INR':'symbol':'1.2-2' }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="btn-next" (click)="scrollCarousel('next')"></div> <!-- Right Arrow -->
+</div>
+
+<div class="no-watchlist dotted-border" *ngIf="watchlist.length === 0">
+  <p class="body-text m-0">You don't have any stocks in your watchlist.</p>
+  <p class="caption-text mt-1">watchlist are a great way to track your favorite stocks in one place.</p>
+  <button class="btn btn-primary" (click)="navigateToDashboard()">Add Stocks</button>
+
+</div>

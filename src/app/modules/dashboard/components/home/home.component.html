@@ -1,5 +1,42 @@
 <div class="row">
   <div class="col-8">
+    <section class="d-flex flex-column" id="watchlist">
+      <h1 class="subtitle">watchlist</h1>
+      <app-watchlist-carousel class="mt-2"></app-watchlist-carousel>
+    </section>
+
+    <section class="d-flex" id="portfolios">
+      <div class="row">
+        <div class="col mt-5">
+          <wallet-widget></wallet-widget>
+
+        </div>
+        <div class="col mt-5">
+          <app-market-chart-widget></app-market-chart-widget>
+        </div>
+
+      </div>
+      <div class="wallet-widget">
+      </div>
+
+    </section>
+
+    <div class="col-4"></div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <div class="row">
+  <div class="col-8">
     <section class="d-flex">
 
       <div class="carousel-container position-relative">
@@ -72,4 +109,4 @@
       <app-stock-list title="transactions" [stocks]="stocks"></app-stock-list>
     </div>
   </div>
-</div>
+</div> -->

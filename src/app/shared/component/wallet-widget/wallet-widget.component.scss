@@ -1,0 +1,170 @@
+.invest-arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+}
+// all class with *-value 
+
+.balance-amount, .growth-section {
+    padding: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.invested-value, .current-value {
+    margin-right: 10px;
+}
+
+.invested-amount {
+    display: flex;
+    align-items: center;
+    padding: 5px 5px 5px 10px;
+    border-radius: 8px;
+    vertical-align: middle; 
+}
+
+// .wallet-widget {
+//     width: 100%;
+//     padding: 20px;
+//     background: white;
+//     border-radius: 8px;
+//     display: flex;
+//     flex-direction: column;
+//     gap: 20px;
+
+//     .balance-section, .invested-section {
+//       display: flex;
+//       flex-direction: column;
+//       gap: 6px;
+
+//       .balance-label, .invested-label, .top-stock-label {
+//         color: #2C2C2C;
+//         font-size: 14px;
+//         font-weight: 500;
+//       }
+
+//       .balance-amount, .invested-amount {
+//         display: flex;
+//         align-items: center;
+//         background: #6425FE;
+//         padding: 16px 20px;
+//         border-radius: 8px;
+//         color: white;
+//         font-size: 20px;
+//         font-weight: 500;
+//       }
+//     }
+
+//     .growth-section {
+//       width: 56px;
+//       height: 56px;
+//       background: #C7FFA5;
+//       border-radius: 8px;
+//       display: flex;
+//       align-items: center;
+//       justify-content: center;
+
+//       .growth-percent {
+//         color: #2C2C2C;
+//         font-size: 14px;
+//         font-weight: 400;
+//         text-transform: uppercase;
+//       }
+//     }
+
+//     .invest-arrow {
+//       width: 40px;
+//       height: 40px;
+//       background: #6425FE;
+//       border-radius: 8px;
+//       display: flex;
+//       align-items: center;
+//       justify-content: center;
+//       margin-left: auto;
+
+//       .arrow-icon {
+//         width: 14px;
+//         height: 14px;
+//         border-top: 2px solid white;
+//         border-right: 2px solid white;
+//         transform: rotate(45deg);
+//       }
+//     }
+
+//     .top-stock-section {
+//       .top-stock-label {
+//         color: #838383;
+//         font-size: 12px;
+//         font-weight: 400;
+//       }
+
+//       .top-stock-details {
+//         background: white;
+//         border-radius: 8px;
+//         padding: 16px;
+//         display: flex;
+//         flex-direction: column;
+//         gap: 16px;
+
+//         .stock-info {
+//           display: flex;
+//           justify-content: space-between;
+
+//           .stock-name {
+//             color: #2C2C2C;
+//             font-size: 12px;
+//             font-weight: 500;
+//           }
+
+//           .stock-symbol, .stock-change {
+//             color: #2C2C2C;
+//             font-size: 12px;
+//             text-align: right;
+//           }
+
+//           .stock-change {
+//             color: #77B900;
+//           }
+//         }
+
+//         .stock-values {
+//           display: flex;
+//           justify-content: space-between;
+
+//           .label {
+//             color: #838383;
+//             font-size: 12px;
+//           }
+
+//           .value {
+//             color: #2C2C2C;
+//             font-size: 14px;
+//             font-weight: 500;
+//           }
+//         }
+//       }
+//     }
+
+//     .bottom-arrow {
+//       padding: 10px;
+//       background: #6425FE;
+//       border-radius: 8px;
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+//       transform: rotate(90deg);
+
+//       .arrow-icon {
+//         width: 14px;
+//         height: 14px;
+//         border-left: 2px solid white;
+//         border-bottom: 2px solid white;
+//         transform: rotate(45deg);
+//       }
+//     }
+//   }

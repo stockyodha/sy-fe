@@ -1,23 +1,112 @@
-@import 'variables';
+@import "light-theme";
 
 body.light {
-    background-color: $background-color;
-    height: 100%;
+  background-color: $cool-gray;
 }
 
 .light {
-    .icon {
-        filter: invert(10%) sepia(2%) saturate(2704%) hue-rotate(202deg) brightness(97%) contrast(82%);
-    }
-    .btn {
-        background-color: $btn-primary-color;
-        color: $btn-text-color;
-    }
+  hr {
+    border: 1px solid $lavender-gray;
+  }
 
-    h1 {
-        color: $h1-font-color;
+  .dotted-border {
+    border-color: $lavender-gray;
+  }
+
+  .card {
+    background-color: $soft-white;
+  }
+
+  .card-accent {
+    background-color: $true-blue;
+    [class*="text"],
+    [class*="text"] {
+      color: $soft-white !important;
     }
- 
+  }
+
+  .card-accent-positive {
+    background-color: $menthol;
+    [class*="text"],
+    [class*="text"] {
+      color: $charcoal-black !important;
+    }
+  }
+
+  .sidebar {
+    background-color: $soft-white;
+  }
+
+  .sidebar li.active {
+    background-color: $cool-gray;
+  }
+
+  .sidebar .group .title {
+    color: $charcoal-black;
+  }
+
+  .sidebar .group.support,
+  .sidebar .group.logout {
+    background-color: $cool-gray;
+  }
+
+  .search-box {
+    border: 1px solid rgba(0, 0, 0, 0.34);
+    background-color: $pearl-gray;
+    input::placeholder {
+      color: rgba(103, 103, 103, 0.47);
+    }
+  }
+
+  // Light Mode Typography Colors
+  .title,
+  .subtitle,
+  .section-title,
+  .small-title {
+    color: $charcoal-black;
+  }
+
+  .body-text,
+  .small-text,
+  .caption-text {
+    color: $storm-gray;
+  }
+
+  .btn-round {
+    background-color: $lavender-gray;
+  }
+
+  .btn-primary {
+    background-color: $shadow-blue;
+    color: $soft-white;
+    border-color: $yander-blue;
+  }
+
+  .btn-primary:hover {
+    background-color: $yander-blue;
+    border-color: $yander-blue;
+  }
+
+  .icon-sm,
+  .icon-md,
+  .icon-bg i {
+    filter: invert(15%) sepia(0%) saturate(0%) hue-rotate(114deg)
+      brightness(101%) contrast(85%);
+  }
+
+  .invested-amount {
+    background-color: $cool-gray;
+    .body-text {
+      color: $charcoal-black !important;
+    }
+    .invest-arrow {
+      background-color: $true-blue;
+    }
+  }
+
+  .market-chart-widget .header .market-button {
+    &.active {
+      color: $soft-white !important;
+    }
+  }
 }
-
-

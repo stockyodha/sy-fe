@@ -12,13 +12,23 @@ import { ApolloError } from "@apollo/client/errors";
 import { MarketService } from "../../../../shared/services/market.service";
 import { NewsService } from "../../../../shared/services/news.service";
 import { WatchlistService } from "../../../../shared/services/watchlist.service";
+import { WatchlistCarouselComponent } from "../../../../shared/component/watchlist-carousel/watchlist-carousel.component";
+import { WalletWidgetComponent } from "../../../../shared/component/wallet-widget/wallet-widget.component";
+import { MarketChartWidgetComponent } from "../../../../shared/component/market-chart-widget/market-chart-widget.component";
 
 
 
 @Component({
     selector: 'app-home',
     standalone: true,
-    imports: [CommonModule, StockListComponent, TrendListComponent],
+    imports: [
+        CommonModule,
+        StockListComponent, 
+        TrendListComponent, 
+        WatchlistCarouselComponent, 
+        WalletWidgetComponent,
+        MarketChartWidgetComponent
+    ],
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss']
 })

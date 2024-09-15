@@ -1,0 +1,65 @@
+.market-chart-widget {
+    padding: 1rem;
+    border-radius: 10px;
+    max-width: 350px;
+  
+    .header {
+      display: flex;
+      margin-bottom: 1rem;
+  
+      .market-button {
+        background-color: transparent;
+        border: none;
+        margin-right: 10px;
+        padding: 5px 10px;
+        cursor: pointer;
+        
+        &.active {
+          background-color: #0169cd;
+          border-radius: 20px;
+        }
+      }
+    }
+  
+    .time-range {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+  
+      .time-button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        
+        &.active {
+          color: #0169cd;
+          border-bottom: 2px solid #0169cd;
+        }
+      }
+    }
+  
+    .chart-container {
+      margin-bottom: 1rem;
+    }
+  
+    .market-details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      color: #2c3a45;
+  
+      .detail {
+        flex: 0 0 48%;
+        margin-bottom: 0.5rem;
+        
+        span {
+          display: block;
+ 
+          &:last-child {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+  

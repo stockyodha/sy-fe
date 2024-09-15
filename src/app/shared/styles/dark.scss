@@ -1,19 +1,125 @@
-@import 'variables';
+$chinese-black: #0d1117;
+$gunmetal: #21262d;
+$dark-gunmetal: #1b2029;
+$crayola: #30363d;
+$cloud-white: #c9d1d9;
+$cool-gray: #8b949e;
+$metallic-blue: #2e4a7e;
+$chinese-blue: #3a5b9a;
+$han-purple: #6425fe;
+$metallic-green: #2C7300;
+$true-blue: #0169cd;
 
 body.dark {
-    background-color: $background-color-dark;
+  background-color: $chinese-black;
 }
 
 .dark {
-    .btn {
-        background-color: $btn-primary-color-dark;
-        color: $btn-text-color-dark;
-    }
+  hr {
+    border: 1px solid $cloud-white;
+  }
 
-    h1 {
-        color: $h1-font-color-dark;
-    }
+  .dotted-border {
+    border-color: $cloud-white;
+  }
 
+  .card {
+    background-color: $gunmetal;
+  }
+
+  .card-accent {
+    background-color: $true-blue;
+    [class*="text"],
+    [class*="text"] {
+      color: $cloud-white !important;
+    }
+  }
+
+  .card-accent-positive {
+    background-color: $metallic-green;
+    [class*="text"],
+    [class*="text"] {
+      color: $cloud-white !important;
+    }
+  }
+
+  .sidebar {
+    background-color: $dark-gunmetal;
+  }
+
+  .sidebar li.active {
+    background-color: $crayola;
+  }
+
+  .sidebar .group .title {
+    color: $cloud-white;
+  }
+
+  .sidebar .group.support,
+  .sidebar .group.logout {
+    background-color: $crayola;
+  }
+
+  .search-box {
+    border: 1px solid rgba(255, 255, 255, 0.34);
+    background-color: $gunmetal;
+    input::placeholder {
+      color: rgba(255, 255, 255, 0.47);
+    }
+    input {
+      color: $cloud-white;
+    }
+  }
+
+  // Dark Mode Typography Colors
+  .title,
+  .subtitle,
+  .section-title,
+  .small-title {
+    color: $cloud-white;
+  }
+
+  .body-text,
+  .small-text,
+  .caption-text {
+    color: $cool-gray;
+  }
+
+  .btn-round {
+    background-color: $crayola;
+  }
+
+  .btn-primary {
+    background-color: $metallic-blue;
+    color: $cloud-white;
+    border-color: $chinese-blue;
+  }
+
+  .btn-primary:hover {
+    background-color: $chinese-blue;
+    border-color: $chinese-blue;
+  }
+
+  .icon-sm,
+  .icon-md,
+  .icon-bg i {
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg)
+      brightness(100%) contrast(100%);
+  }
+
+  .invested-amount {
+    background-color: $crayola;
+    .body-text {
+      color: $cloud-white !important;
+    }
+    .invest-arrow {
+      background-color: $true-blue;
+    }
+  }
+
+  .market-chart-widget .header .market-button {
+    &.active {
+      color: $cloud-white !important;
+    }
+  }
 }
-
-

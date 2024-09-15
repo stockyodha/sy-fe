@@ -9,7 +9,6 @@ import { SidebarComponent } from '../../shared/component/sidebar/sidebar.compone
 import { HeaderComponent } from '../../shared/component/header/header.component';
 import { HomeComponent } from './components/home/home.componnet';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
-import { StockListComponent } from '../../shared/component/stock-list/stock-list.component';
 
 const routes: Routes = [
   {

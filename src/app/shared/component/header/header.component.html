@@ -1,25 +1,29 @@
-<div class="header">
-    <div class="left-section">
-      overview
+<div class="header" [ngClass]="{'open': isOpen()}">
+  <div class="left-section">
+    <p class="title mb-0">{{title}}</p>
+  </div>
+  <div class="right-section">
+    <div class="search-box">
+      <input type="text" placeholder="search for an asset">
+      <div class="icon-md">
+        <i class="fa-regular fa-magnifying-glass"></i>
+      </div>
     </div>
-    <div class="right-section">
-      <div class="search-box">
-        <input type="text" placeholder="search for an asset">
-        <button>
-          <img src="https://img.icons8.com/ios-glyphs/30/000000/search.png" alt="search" width="20px">
-        </button>
+    <div class="btn-round">
+      <div class="icon-md">
+        <i class="fa-sharp fa-regular fa-bell"></i>
       </div>
-      <div class="icons">
-        <div class="icon-btn">
-          <img src="assets/images/bell-notification.svg" alt="notifications" width="20px">
-        </div>
-        <div class="icon-btn">
-          <img src="https://img.icons8.com/ios-glyphs/30/000000/folder-invoices.png" alt="files" width="20px">
-        </div>
+    </div>
+    <div class="btn-round">
+      <div class="icon-md">
+        <i class="fa-regular fa-wallet"></i>
       </div>
-      <div class="profile">
-        <img src="https://img.icons8.com/ios-filled/50/000000/user.png" alt="user" width="20px">
-        <span>John Doe</span>
+    </div>
+    <div class="profile">
+      <div class="icon-md">
+        <i class="fa-duotone fa-solid fa-user"></i>
       </div>
+      <span>John Doe</span>
     </div>
   </div>
+</div>

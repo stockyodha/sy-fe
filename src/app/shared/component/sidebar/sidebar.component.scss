@@ -1,214 +1,146 @@
 .sidebar {
-    width: 250px;
-    height: 100vh;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 100vh;
+  width: 100px;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 20px 0px;
+  border-radius: 0 25px 25px 0;
+  transition: 0.2s;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    cursor: pointer;
+    margin-left: 30px;
+    padding: 10px;
 
-    .logo {
-        display: flex;
-        align-items: center;
-        margin-bottom: 20px;
-
-        img {
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
-        }
-
-        span {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #333333;
-        }
+    [class^="icon-"] {
+      margin-right: 5px;
     }
+  }
+}
 
-    .navigation {
-        span {
-            font-size: 0.9rem;
-            color: #888888;
-            display: block;
-            margin-bottom: 10px;
-        }
+.sidebar .logo {
+  margin-left: 30px;
+  .icon-bg {
+    margin-right: 10px;
+  }
+}
 
-        ul {
-            list-style-type: none;
-            padding: 0;
+.sidebar.open {
+  width: 250px;
+}
 
-            li {
-                margin-bottom: 13px;
+.sidebar li.active {
+  margin: 0px 0px 0px 30px;
+  padding: 10px;
+  border-radius: 12px;
+}
 
-                a {
-                    text-decoration: none;
-                    color: #333333;
-                    display: flex;
-                    align-items: center;
-                    font-size: 1.1rem;
+.sidebar .btn-prev,
+.sidebar .btn-next {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%) translateX(50%);
+}
 
-                    img {
-                        width: 24px;
-                        height: 24px;
-                        margin-right: 10px;
-                    }
-                }
-            }
-            li.active {
-                background-color: #F8F9FB !important;
-                border-radius: 12px;
-            }
-        }
-    }
+hr {
+    margin: 0 0 0 20px;
+}
 
-    .other {
-        margin-top: 20px;
+.sidebar .group {
+  margin-top: 30px;
+}
 
-        span {
-            font-size: 0.9rem;
-            color: #888888;
-            display: block;
-            margin-bottom: 10px;
-        }
+.sidebar .group .title {
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.75px;
+  margin-left: 30px;
+}
 
-        ul {
-            list-style-type: none;
-            padding: 0;
+.sidebar label.switch {
+  margin-left: auto;
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+}
 
-            li {
-                margin-bottom: 13px;
+.sidebar .group.support {
+  margin-top: auto;
+  margin-left: 20px;
+  padding: 15px;
+  border-radius: 12px;
+}
 
-                a {
-                    text-decoration: none;
-                    color: #333333;
-                    display: flex;
-                    align-items: center;
-                    font-size: 1.1rem;
+.sidebar .group.logout {
+  display: flex;
+  margin-top: auto;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-left: 20px;
+  [class^="icon-"] {
+    margin-right: 10px;
+  }
+}
 
-                    img {
-                        width: 24px;
-                        height: 24px;
-                        margin-right: 10px;
-                    }
+/* The switch - the outer container */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 52px; /* Slightly increased width to match movement */
+  height: 26px; /* Slightly increased height for perfect centering */
+}
 
-                    .switch {
-                        margin-left: auto;
-                        position: relative;
-                        display: inline-block;
-                        width: 34px;
-                        height: 20px;
+/* Hide the default checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
 
-                        input {
-                            opacity: 0;
-                            width: 0;
-                            height: 0;
-                        }
+/* The slider */
+.slider {
+  height: 22px; /* Slightly increased height for perfect centering */
+  width: 40px; /* Slightly increased width to match movement */
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 20px;
+}
 
-                        .slider {
-                            position: absolute;
-                            cursor: pointer;
-                            top: 0;
-                            left: 0;
-                            right: 0;
-                            bottom: 0;
-                            background-color: #ccc;
-                            transition: .4s;
-                            border-radius: 34px;
+/* The circle inside the slider */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+  margin-left: 1px;
+  margin-top: 1px;
+}
 
-                            &::before {
-                                position: absolute;
-                                content: "";
-                                height: 14px;
-                                width: 14px;
-                                left: 3px;
-                                bottom: 3px;
-                                background-color: white;
-                                transition: .4s;
-                                border-radius: 50%;
-                            }
-                        }
+/* Toggle the switch when checked */
+input:checked + .slider {
+  background-color: #2196f3;
+}
 
-                        input:checked+.slider {
-                            background-color: #2196F3;
-                        }
-
-                        input:checked+.slider::before {
-                            transform: translateX(14px);
-                        }
-                    }
-                }
-            }
-
-            li.active {
-                background-color: #F8F9FB !important;
-                border-radius: 12px;
-            }
-        }
-    }
-
-    .support {
-        background-color: #F8F9FB;
-        border-radius: 12px;
-        padding: 15px;
-        margin-top: 20px;
-
-        .support-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            img {
-                width: 20px;
-                height: 20px;
-                margin-right: 5px;
-            }
-
-            span {
-                font-size: 1rem;
-                font-weight: 600;
-                color: #333333;
-            }
-
-            .close-btn {
-                background: none;
-                border: none;
-                font-size: 1.5rem;
-                color: #888888;
-                align-self: flex-end;
-                cursor: pointer;
-            }
-
-            p {
-                margin-top: 10px;
-                color: #8B8C8E;
-                text-align: center;
-                font-size: 15px;
-                font-style: normal;
-                font-weight: 500;
-            }
-        }
-    }
-
-    .logout {
-        margin-top: 20px;
-        background-color: #F8F9FB;
-        padding: 10px 20px;
-        border-radius: 20px;
-
-        a {
-            text-decoration: none;
-            color: #333333;
-            display: flex;
-            align-items: center;
-            font-size: 1.1rem;
-
-            img {
-                width: 24px;
-                height: 24px;
-                margin-right: 10px;
-            }
-        }
-    }
+/* Move the slider when checked */
+input:checked + .slider:before {
+  transform: translateX(20px); /* Fine-tuned for better alignment */
 }

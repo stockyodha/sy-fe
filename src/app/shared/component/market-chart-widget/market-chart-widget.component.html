@@ -1,0 +1,43 @@
+<div class="market-chart-widget card">
+    <div class="header">
+      <button class="market-button small-title" (click)="changeMarket('NSE')" [ngClass]="{'active': activeMarket === 'NSE'}">NSE</button>
+      <button class="market-button small-title" (click)="changeMarket('BSE')" [ngClass]="{'active': activeMarket === 'BSE'}">BSE</button>
+    </div>
+    
+    <div class="time-range">
+      <button class="time-button small-title" (click)="changeTimeRange('1D')" [ngClass]="{'active': activeTimeRange === '1D'}">1D</button>
+      <button class="time-button small-title" (click)="changeTimeRange('5D')" [ngClass]="{'active': activeTimeRange === '5D'}">5D</button>
+      <button class="time-button small-title" (click)="changeTimeRange('1M')" [ngClass]="{'active': activeTimeRange === '1M'}">1M</button>
+      <button class="time-button small-title" (click)="changeTimeRange('6M')" [ngClass]="{'active': activeTimeRange === '6M'}">6M</button>
+      <button class="time-button small-title" (click)="changeTimeRange('1Y')" [ngClass]="{'active': activeTimeRange === '1Y'}">1Y</button>
+    </div>
+  
+    <div class="chart-container">
+      <canvas #myCanvas baseChart 
+              [data]="lineChartData"
+              [options]="lineChartOptions"
+              [legend]="lineChartLegend"
+              [plugins]="lineChartPlugins"
+              type="line"></canvas>
+    </div>
+  
+    <div class="market-details">
+      <div class="detail">
+        <span class="caption-text">High</span>
+        <span class="body-text">{{ high }}</span>
+      </div>
+      <div class="detail">
+        <span class="caption-text">Low</span>
+        <span class="body-text">{{ low }}</span>
+      </div>
+      <div class="detail">
+        <span class="caption-text">Prev Close (Avr 28 Days)</span>
+        <span class="body-text">{{ prevClose }}</span>
+      </div>
+      <div class="detail">
+        <span class="caption-text">Open</span>
+        <span class="body-text">{{ open }}</span>
+      </div>
+    </div>
+  </div>
+  

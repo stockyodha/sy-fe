@@ -1,21 +1,74 @@
-@import "./variables.scss";
-@import "./dark.scss";
-@import "./light.scss";
+// Font Family
+$font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 
+// Font Sizes and Line Heights
+$title-size: 24px;
+$title-line-height: 32px;
 
-h1 {
-    text-align: center;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: 40px;
+$subtitle-size: 20px;
+$subtitle-line-height: 28px;
+
+$section-title-size: 18px;
+$section-title-line-height: 26px;
+
+$body-text-size: 16px;
+$body-text-line-height: 24px;
+
+$small-title-size: 14px;
+$small-title-line-height: 20px;
+
+$small-text-size: 14px;
+$small-text-line-height: 20px;
+
+$caption-text-size: 12px;
+$caption-line-height: 18px;
+
+// Typography Classes
+.title {
+  font-size: $title-size;
+  line-height: $title-line-height;
+  font-weight: 700;
+  font-family: $font-family;
 }
 
-
-p {
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    /* 200% */
+.subtitle {
+  font-size: $subtitle-size;
+  line-height: $subtitle-line-height;
+  font-weight: 600;
+  font-family: $font-family;
 }
 
+.section-title {
+  font-size: $section-title-size;
+  line-height: $section-title-line-height;
+  font-weight: 600;
+  font-family: $font-family;
+}
+
+.small-title {
+  font-size: $small-title-size;
+  line-height: $small-title-line-height;
+  font-weight: 600;
+  font-family: $font-family;
+}
+
+.body-text {
+  font-size: $body-text-size;
+  line-height: $body-text-line-height;
+  font-weight: 400;
+  font-family: $font-family;
+}
+
+.small-text {
+  font-size: $small-text-size;
+  line-height: $small-text-line-height;
+  font-weight: 400;
+  font-family: $font-family;
+}
+
+.caption-text {
+  font-size: $caption-text-size;
+  line-height: $caption-line-height;
+  font-weight: 400;
+  font-family: $font-family;
+}
