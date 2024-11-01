@@ -1,0 +1,56 @@
+
+.portfolio-analysis {
+  padding: 16px;
+  border-radius: 8px;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+
+    .time-ranges {
+      display: flex;
+      gap: 8px;
+
+      .market-button {
+        background: transparent;
+        border: none;
+        padding: 4px 8px;
+        cursor: pointer;
+
+        &.active {
+          color: #0169cd;
+          border-bottom: 2px solid #0169cd;
+        }
+      }
+    }
+  }
+
+  .chart-container {
+    position: relative;
+
+    canvas {
+      width: 100%;
+      height: 300px;
+    }
+
+    .tooltip {
+      position: absolute;
+      background-color: #6425fe;
+      padding: 8px;
+      border-radius: 4px;
+      transform: translate(-50%, -100%);
+      text-align: center;
+
+      .tooltip-date {
+        margin-bottom: 4px;
+      }
+
+      .tooltip-value {
+        font-weight: 600;
+      }
+    }
+  }
+}

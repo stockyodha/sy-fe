@@ -1,0 +1,66 @@
+.transaction-card {
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .see-all {
+            color: #6425fe;
+        }
+    }
+
+    hr {
+        margin: 8px 0;
+    }
+
+    .transaction-list {
+        .transaction-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 0;
+
+            .meta {
+                display: flex;
+
+
+                .icon {
+                    width: 40px;
+                    height: 40px;
+                    background-color: #8b949e;
+                    border-radius: 50%;
+                    margin-right: 12px;
+                }
+
+                .details {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
+
+                    .body-text {
+                        color: #c9d1d9; // For dark theme; adjust for light if necessary
+                    }
+
+                    .caption-text {
+                        color: #8b949e;
+                    }
+                }
+            }
+
+            .amount {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+
+                .body-text {
+                    font-weight: 600;
+                }
+
+                .status {
+                    color: #2C7300;
+                }
+            }
+        }
+    }
+}

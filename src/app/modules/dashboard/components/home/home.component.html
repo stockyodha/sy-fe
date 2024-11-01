@@ -1,29 +1,37 @@
-<div class="row">
+<section class="row" id="watchlist">
+  <div class="col-12">
+    <h1 class="subtitle">watchlist</h1>
+  </div>
   <div class="col-8">
-    <section class="d-flex flex-column" id="watchlist">
-      <h1 class="subtitle">watchlist</h1>
-      <app-watchlist-carousel class="mt-2"></app-watchlist-carousel>
-    </section>
+    <app-watchlist-carousel class="mt-2"></app-watchlist-carousel>
+  </div>
+</section>
 
-    <section class="d-flex" id="portfolios">
-      <div class="row">
-        <div class="col mt-5">
-          <wallet-widget></wallet-widget>
-
-        </div>
-        <div class="col mt-5">
-          <app-market-chart-widget></app-market-chart-widget>
-        </div>
-
-      </div>
-      <div class="wallet-widget">
-      </div>
-
-    </section>
-
-    <div class="col-4"></div>
+<section class="row mt-5" id="portfolios">
+  <div class="col-4">
+    <wallet-widget></wallet-widget>
   </div>
 
+  <div class="col-4">
+    <app-market-chart-widget></app-market-chart-widget>
+  </div>
+
+  <div class="col-4">
+    <app-snapshot></app-snapshot>
+  </div>
+
+  <div class="wallet-widget">
+  </div>
+</section>
+
+<section class="row mt-5" id="portfolios">
+  <div class="col-8">
+    <app-portfolio-analysis></app-portfolio-analysis>
+  </div>
+  <div class="col-4">
+    <app-recent-transaction></app-recent-transaction>
+  </div>
+</section>
 
 
 
@@ -35,7 +43,8 @@
 
 
 
-  <!-- <div class="row">
+
+<!-- <div class="row">
   <div class="col-8">
     <section class="d-flex">
 

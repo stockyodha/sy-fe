@@ -1,0 +1,49 @@
+.snapshot-container {
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+
+  .snapshot-data {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 12px;
+
+    .snapshot-data-item {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+.day-range,
+.week-range {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+
+}
+
+.snapshot-range-bar {
+  height: 2px;
+  width: 100%;
+  background-color: #6425fe;
+  position: relative;
+  margin: 10px 8px;
+
+  .indicator {
+    width: 2px;
+    height: 16px;
+    background-color: #c9d1d9;
+    position: absolute;
+    top: -7px;
+  }
+
+  .indicator-label {
+    line-height: 18px;
+    position: absolute;
+    top: 10px;
+  }
+
+}

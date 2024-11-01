@@ -1,0 +1,22 @@
+<div class="transaction-card card">
+  <div class="header">
+    <span class="section-title">Recent Transaction</span>
+    <a class="see-all small-text" href="#">See All</a>
+  </div>
+  <hr />
+  <div class="transaction-list">
+    <div class="transaction-item" *ngFor="let transaction of transactions">
+      <div class="meta">
+        <div class="icon"></div>
+        <div class="details">
+          <span class="body-text">{{ transaction.name }}</span>
+          <span class="caption-text">{{ transaction.date }}</span>
+        </div>
+      </div>
+      <div class="amount">
+        <span class="body-text">${{ transaction.amount }}</span>
+        <span class="status caption-text">{{ transaction.status }}</span>
+      </div>
+    </div>
+  </div>
+</div>

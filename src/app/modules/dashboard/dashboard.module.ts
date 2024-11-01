@@ -6,9 +6,10 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
 import { SidebarComponent } from '../../shared/component/sidebar/sidebar.component';
-import { HeaderComponent } from '../../shared/component/header/header.component';
 import { HomeComponent } from './components/home/home.componnet';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { SearchComponent } from "../../shared/component/searchbar/search-bar.component";
+import { HeaderComponent } from "../../shared/component/header/header.component";
 
 const routes: Routes = [
   {
@@ -39,8 +40,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [DashboardComponent, SidebarComponent, HeaderComponent],
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  declarations: [DashboardComponent, SidebarComponent],
+  imports: [CommonModule, RouterModule.forChild(routes), SearchComponent, HeaderComponent],
   exports: [RouterModule]
 })
 export class DashboardModule { }

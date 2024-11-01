@@ -1,0 +1,52 @@
+.stocks-container {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.stock-card {
+  width: 240px;
+
+  .stock-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+
+    .stock-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo {
+      width: 40px;
+      height: 40px;
+      margin-right: 12px;
+      border-radius: 50%;
+    }
+
+
+    .name {
+      color: #8b949e;
+    }
+  }
+
+  .stock-price {
+    .price-change {
+      display: flex;
+      align-items: center;
+      margin-top: 4px;
+
+      &.positive .change {
+        color: #2C7300;
+      }
+
+      &.negative .change {
+        color: #6425fe;
+      }
+
+      .change {
+        margin-right: 4px;
+      }
+    }
+  }
+}

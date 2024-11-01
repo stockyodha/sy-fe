@@ -7,7 +7,7 @@ import { TrendListComponent } from "../../../../shared/component/trend-list/tren
 import { PortfolioService } from "../../../../shared/services/portfolio.service";
 import { UserService } from "../../../../shared/services/user.service";
 import { News, Portfolio, PortfolioResponse, TopLosersGainers, User } from "../../../../graphql/generated-types";
-import { Observable, Subscription } from "rxjs";
+import { Subscription } from "rxjs";
 import { ApolloError } from "@apollo/client/errors";
 import { MarketService } from "../../../../shared/services/market.service";
 import { NewsService } from "../../../../shared/services/news.service";
@@ -15,20 +15,24 @@ import { WatchlistService } from "../../../../shared/services/watchlist.service"
 import { WatchlistCarouselComponent } from "../../../../shared/component/watchlist-carousel/watchlist-carousel.component";
 import { WalletWidgetComponent } from "../../../../shared/component/wallet-widget/wallet-widget.component";
 import { MarketChartWidgetComponent } from "../../../../shared/component/market-chart-widget/market-chart-widget.component";
-
-
+import { SnapshotComponent } from "../../../../shared/component/snapshot/snapshot.component";
+import { PortfolioAnalysisComponent } from "../../../../shared/component/portfolio-analysis/portfolio-analysis.component";
+import { RecentTransactionComponent } from "../../../../shared/component/recent-transaction/recent-transaction.component";
 
 @Component({
     selector: 'app-home',
     standalone: true,
     imports: [
-        CommonModule,
-        StockListComponent, 
-        TrendListComponent, 
-        WatchlistCarouselComponent, 
-        WalletWidgetComponent,
-        MarketChartWidgetComponent
-    ],
+    CommonModule,
+    StockListComponent,
+    TrendListComponent,
+    WatchlistCarouselComponent,
+    WalletWidgetComponent,
+    MarketChartWidgetComponent,
+    SnapshotComponent,
+    PortfolioAnalysisComponent,
+    RecentTransactionComponent
+],
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss']
 })

@@ -1,0 +1,18 @@
+<div class="portfolio-analysis card">
+    <div class="header">
+        <div class="small-title">Portfolio Analytics</div>
+        <div class="time-ranges">
+            <button class="small-title" *ngFor="let range of timeRanges" [class.active]="range === selectedRange"
+                (click)="selectRange(range)" class="market-button">
+                {{ range }}
+            </button>
+        </div>
+    </div>
+
+    <div class="chart-container">
+        <!-- Placeholder for the chart; replace with an actual chart using chart.js or ngx-charts -->
+        <canvas #myCanvas baseChart [data]="lineChartData" [options]="lineChartOptions" [legend]="lineChartLegend"
+            [plugins]="lineChartPlugins" type="line"></canvas>
+
+    </div>
+</div>

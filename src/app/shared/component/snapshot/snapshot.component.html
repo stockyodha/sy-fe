@@ -1,0 +1,58 @@
+<div class="snapshot-container card">
+    <div class="snapshot-header">
+        <span class="small-title">Snapshot</span>
+    </div>
+    <div class="snapshot-data mt-3">
+        <div class="snapshot-data-item">
+            <span class="snapshot-label caption-text">Prev Close</span>
+            <span class="section-title">{{ prevClose }}</span>
+        </div>
+        <div class="snapshot-data-item">
+            <span class="caption-text">Open</span>
+            <span class="section-title">{{ open }}</span>
+        </div>
+    </div>
+    <hr>
+    <div class="snapshot-data day-range mt-3">
+        <div class="snapshot-data-item">
+            <span class="caption-text">Day Low</span>
+            <span class="body-text">{{ dayLow }}</span>
+        </div>
+        <div class="snapshot-data-item">
+            <span class="caption-text">Day High</span>
+            <span class="body-text">{{ dayHigh }}</span>
+        </div>
+    </div>
+    <div class="snapshot-range-bar d-flex">
+        <span class="indicator" [style.left]="calcPosition(dayLow, dayHigh, currentValue) + '%'"></span>
+        <p class="indicator-label section-title"  [style.left]="calcPosition(dayLow, dayHigh, currentValue) - 10 + '%'">{{currentValue}}</p>
+    </div>
+
+    <div class="snapshot-data week-range mt-3">
+        <div class="snapshot-data-item">
+            <span class="caption-text">52 Week Low</span>
+            <span class="body-text">{{ weekLow }}</span>
+        </div>
+ 
+        <div class="snapshot-data-item">
+            <span class="caption-text">52 Week High</span>
+            <span class="body-text">{{ weekHigh }}</span>
+        </div>
+    </div>
+    <div class="snapshot-range-bar mb-5">
+        <span class="indicator" [style.left]="calcPosition(weekLow, weekLow, currentValue) + '%'"></span>
+        <p class="indicator-label section-title"  [style.left]="calcPosition(weekLow, weekLow, currentValue) - 10 + '%'">{{currentValue}}</p>
+    </div>
+
+    <hr>
+    <div class="snapshot-data">
+        <div class="snapshot-data-item">
+            <span class="caption-text">Trade Time</span>
+            <span class="section-title">{{ tradeTime }}</span>
+        </div>
+        <div class="snapshot-data-item">
+            <span class="caption-text">Trade Date</span>
+            <span class="section-title">{{ tradeDate }}</span>
+        </div>
+    </div>
+</div>

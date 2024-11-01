@@ -1,0 +1,19 @@
+<div class="stocks-container">
+    <div class="stock-card card" *ngFor="let stock of stocks">
+      <div class="stock-header">
+        <img [src]="stock.logo" alt="{{ stock.symbol }}" class="logo" />
+        <div class="stock-info">
+          <span class="symbol small-title">{{ stock.symbol }}</span>
+          <span class="name caption-text">{{ stock.name }}</span>
+        </div>
+      </div>
+      <div class="stock-price mt-2">
+        <span class="price section-title">${{ stock.price | number: '1.0-2' }}</span>
+        <div class="price-change body-text" [ngClass]="{ 'positive': stock.changeType === 'positive', 'negative': stock.changeType === 'negative' }">
+          <span class="change">{{ stock.change | number: '1.2-2' }}%</span>
+          <span class="caption-text">vs last month</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
